@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title%}Compétences{% endblock %}</title> 
+		<link rel="stylesheet" href="/Css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        {% block stylesheets %}{% endblock %} 
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Accueil</a>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="/cv" style="text-decoration:none">Profil</a>
+                        <a href="/competences" style="text-decoration:none">Mes compétences</a>        
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="#haut" style="text-decoration:none">Retour en haut</a>        
+                    </li>
+                </ul>               
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit" href="/loisir">Pour en savoir plus</button>
+            </div>
+        </nav>  
+        <div class="container">
+            {% block body %}
+            <h3 id="haut"> Mes compétences dans le milieu professionel!</h3>
+            <ul>
+                <li><a class="Loisir" href="#Reseau" style="text-decoration: none">En réseau</a></li>
+                <li><a class="Loisir" href="#Systeme_num" style="text-decoration: none">En systèmes numériques et informatiques</a></li> 
+                <li><a class="Loisir" href="#SecuriteInfo" style="text-decoration: none">En cyber-sécurité</a></li>
+            </ul>
+
+            <h4 id="Reseau">Réseau</h4>
+            <ul><a href="#ConfigurationSwitch" style="text-decoration: none">Configurer un switch</a></ul>
+            <div class="Img_Reseau"></div>
+            Configurer des adresses IP dans un réseau local :
+            <li>Exemple de configuration de deux PC sur Cisco Packet Tracer:</li>
+            <ul>Configuration de PC1 sur un réseau de classe A:</ul>
+            <div class="PC1_config"></div>
+            <ul>Configuration de PC3 sur le même réseau que PC1:</ul>
+            <div class="PC3_config"></div>
+            <ul>Test de connectivité par le billet d'un ping:</ul>
+            <div class="PingPC1-PC3"></div>
+            <h5 id="ConfigurationSwitch">Configurer un switch</h5>
+            <div class="Img_Switch"></div>
+            Pour configurer un switch, je me suis créé un document me permettant de consulter les commandes qu'il faut pour configurer un switch si j'ai un doute sur la syntaxe.
+            J'ai aussi les commandes pour diagnostiquer le réseau s'il y a des soucis de communications entre les équipements de chaque vlan/ lan.
+            <ul>Extrait de mon document sur la configuration d'un vlan:</ul>
+            <div class="Extrait_vlan"></div>
+            <h4 id="Systeme_num">Systèmes numériques et informatiques</h4>
+            <ul><a href="#Temp_Humi" style="text-decoration: none">Surveillance de température et d'humidité</a></ul>
+            <ul><a href="#MoteurPasaPas" style="text-decoration: none">Pilotage d'un moteur pas à pas</a></ul>            
+            <h6 id="Temp_Humi">Câblage d'un système pour mesurer la température et d'humidité:</h6>
+            <div class="Cablage_Temp_Humi"></div>
+            Dans le cadre d'un TP, je devais câbler le capteur DHT22 à un esp32. Je devais donc m'intéresser sur la documentation de ce capteur pour savoir à quoi il servait et comment le programmer.
+            <br>
+            La DHT22 est un capteur bas coût composé d’un capteur d'humidité capacitif et une thermistance pour mesurer la température et l'humidité de l'air et la transmet de façon numérique sur un bus série. 
+            Les données sont actualisées toutes les 2 secondes Ce capteur est semblable au DHT11 mais il dispose d'une plus grande précision (±0,1°C) et peut mesurer les températures négatives, par contre il est un peu plus cher et un peu plus gros.
+            <div class="Temp_Humi"></div>
+            <h6 id="MoteurPasaPas">Pilotage d'un moteur pas à pas</h6>
+            <div class="Img_Moteur"></div>
+            Comme pour le capteur de température et d'humidité, je devais rechercher comment fonctionne ce moteur.
+            J'en suis arriver à réaliser ce schéma pour le câbler sur une carte arduino.
+            <div class="Cablage_Moteur"></div>
+            Pour faire tourner le moteur :
+            <div class="moteurpasapasCode"></div>
+            <br>
+            <h6 id="SecuriteInfo">Cyber-sécurité:</h6>
+            <div class="SecNumAnsii"></div>
+            {% endblock %} 
+        </div>
+        {{ include('footer.html.twig')}} 
+        </footer>
+    </body>
+</html>

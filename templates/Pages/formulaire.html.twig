@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+{% block title%}Pour me contacter{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="formulaire_1">
+            <form>
+                <h4>Pour me contacter</h4>
+                <hr class="underline ml-0">
+                <div class="form-row">
+                    <label>Adresse mail</label>
+                    <div class="col">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Objet</label>
+                    <div class="col">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>                   
+                <div class="form-row">
+                    <label>Message</label>
+                    <div class="col">
+                        <textarea class="form-control"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-dark">Envoyer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
